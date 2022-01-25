@@ -1,0 +1,35 @@
+.search-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px;
+    transition: .4s;
+}
+
+@media (max-width: 840px) {
+    .search-box {
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-box {
+        padding-top: 20px;
+    }
+}
+
+.search-box__wrapper {
+    position: relative;
+    max-width: 510px;
+    width: 100%;
+}
+
+.search-box__input {
+    position: relative;
+    z-index: 9;
+}
+
+.search-box__autocomplete-list {
+    position: absolute;
+    z-index: 8;
+}

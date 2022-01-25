@@ -1,0 +1,146 @@
+
+.city-weather {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 28px;
+}
+
+@media (max-width: 768px) {
+    .city-weather {
+        padding-top: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .city-weather {
+        padding-top: 45px;
+    }
+}
+
+.city-weather__title {
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 110.7%;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    transition: .5s;
+}
+
+@media (max-width: 480px) {
+    .city-weather__title {
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+}
+
+.city-weather__description {
+    font-size: 16px;
+    line-height: 110.7%;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 480px) {
+    .city-weather__description {
+        font-size: 14px;
+
+    }
+}
+
+.city-weather__temp-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 480px) {
+    .city-weather__temp-wrapper {
+        flex-direction: column;
+        margin-bottom: 12px;
+    }
+}
+
+.city-weather__temp {
+    font-weight: 600;
+    font-size: 129.755px;
+    line-height: 110.7%;
+    background: linear-gradient(180deg, #FFFFFF 11.65%, rgba(255, 255, 255, 0) 139.47%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@media (max-width: 480px) {
+    .city-weather__temp {
+        font-size: 120px;
+    }
+}
+
+.city-weather__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 191px;
+    height: 191px;
+}
+
+@media (max-width: 480px) {
+    .city-weather__icon-wrapper {
+        margin-top: -37px;
+    }
+}
+
+.city-weather__icon {
+    width: 150px;
+    height: 150px;
+}
+
+@media (max-width: 768px) {
+    .city-weather__icon {
+        width: 141px;
+        height: 141px;
+    }
+}
+
+@media (max-width: 480px) {
+    .city-weather__icon {
+        width: 132px;
+        height: 132px;
+    }
+}
+
+.city-weather__pressure-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 480px) {
+    .city-weather__pressure-wrapper {
+        margin-bottom: 38px;
+    }
+}
+
+.city-weather__pressure {
+    color: #FFFFFF;
+}
+
+@media (max-width: 480px) {
+    .city-weather__pressure {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.city-weather__sunset {
+
+}
+
+@media (max-width: 480px) {
+    .city-weather__sunset {
+        font-size: 14px;
+        line-height: 110.7%;
+    }
+}

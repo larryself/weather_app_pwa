@@ -1,0 +1,40 @@
+.hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.hint__search {
+    max-width: 170px;
+    text-align: center;
+    position: relative;
+}
+
+.hint__search-icon {
+    position: absolute;
+    left: -24px;
+    top: -2px;
+    transform: translate(-50%, -50%);
+}
+
+.hint__search-text--white {
+    color: #FFFFFF;
+    border-bottom: 1px dashed #FFFFFF;
+}
+
+.hint__bookmark {
+    text-align: center;
+    margin-top: 88px;
+    max-width: 250px;
+}
+
+@media (max-width: 480px) {
+    .hint__bookmark {
+        margin-top: 95px;
+    }
+}
+
+.hint__bookmark-icon {
+    margin-top: 20px;
+}

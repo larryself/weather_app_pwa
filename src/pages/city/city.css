@@ -1,0 +1,49 @@
+.city {
+    background: radial-gradient(80.36% 80.36% at 50% 0%, #5A607C 0%, #161B30 100%);
+    height: 100%;
+    padding: 24px 34px;
+}
+
+@media (max-width: 768px) {
+    .city {
+        padding: 20px;
+    }
+}
+
+.city__nav-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.city__link-back {
+    color: #8A91AB;
+}
+
+@media (min-width: 1024px) {
+    .city__link {
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+    }
+}
+
+.city__link:hover, .city__link:focus {
+    color: #FFFFFF;
+}
+
+.city__link-icon {
+    fill: currentColor;
+}
+
+.city__bookmark {
+    background-color: transparent;
+    color: #8A91AB;
+}
+
+.city__bookmark:hover, .city__bookmark:focus {
+    color: #FFFFFF;
+}
+
+.city__bookmark-icon {
+    fill: currentColor;
+}

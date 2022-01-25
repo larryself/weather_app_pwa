@@ -1,0 +1,27 @@
+.similar-cities {
+    width: 100%;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-top: -3px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.similar-cities__list {
+    cursor: pointer;
+    width: 100%;
+}
+
+.similar-cities__item {
+    background: #30354B;
+}
+
+.similar-cities__item-link {
+    padding: 20px;
+    background: #30354B;
+    display: block;
+}
+
+.similar-cities__item-highlight {
+    color: #FFF;
+}
