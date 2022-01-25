@@ -1,12 +1,12 @@
 .city {
     background: radial-gradient(80.36% 80.36% at 50% 0%, #5A607C 0%, #161B30 100%);
     height: 100%;
-    padding: 24px 34px;
+    padding: 14px 24px;
 }
 
 @media (max-width: 768px) {
     .city {
-        padding: 20px;
+        padding: 10px;
     }
 }
 
@@ -15,8 +15,9 @@
     justify-content: space-between;
 }
 
-.city__link-back {
+.city__link {
     color: #8A91AB;
+    padding: 10px;
 }
 
 @media (min-width: 1024px) {
@@ -38,7 +39,9 @@
 .city__bookmark {
     background-color: transparent;
     color: #8A91AB;
+    padding: 10px;
 }
+
 
 .city__bookmark:hover, .city__bookmark:focus {
     color: #FFFFFF;
