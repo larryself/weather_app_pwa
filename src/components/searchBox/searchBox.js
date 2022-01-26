@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import SearchInput from "../searchInput/searchInput";
 import ListSimilarCities from "../ListSimilarCities/listSimilarCities";
 import './searchBox.css'
 
-const SearchBox = () => {
-    const [inputValue, setInputValue] = useState('');
-
+const SearchBox = ({inputValue,setInputValue}) => {
     return (
         <div className={'search-box'}>
             <div className={'search-box__wrapper'}>

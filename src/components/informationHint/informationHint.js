@@ -2,13 +2,13 @@ import React from 'react';
 import './informationHint.css';
 import Icon from "../icon/icon";
 
-const InformationHint = () => {
+const InformationHint = ({setInputValue}) => {
     return (
         <div className={'hint'}>
             <div className={'hint__search'}>
                 <Icon width={38} height={32} className={"hint__search-icon"} name={'arrow'}/>
                 <p className={'hint__search-text'}>Начните вводить город,
-                    например, <span className={'hint__search-text--white'}>Ижевск</span></p>
+                    например, <span className={'hint__search-text--white'} onClick={e=>setInputValue(e.target.innerHTML)}>Ижевск</span></p>
             </div>
             <div className={'hint__bookmark'}>
                 <p>Используйте значок «закладки»,

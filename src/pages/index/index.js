@@ -10,6 +10,7 @@ import InformationHint from "../../components/informationHint/informationHint";
 import Loader from "../../components/loader/loader";
 
 const Index = () => {
+    const [inputValue, setInputValue] = useState('');
     const [cities, SetCities] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
     const searchWeather = async (citiesInBookmark) => {
@@ -28,10 +29,10 @@ const Index = () => {
             <Header/>
             <main className={'page-main'}>
                 <Wrapper>
-                    <SearchBox/>
+                    <SearchBox inputValue={inputValue} setInputValue={setInputValue}/>
                     {cities.length ?
                         <CityCards cities={cities}/> : isLoading ?
-                            <Loader/> : <InformationHint/>}
+                            <Loader/> : <InformationHint setInputValue={setInputValue}/>}
                 </Wrapper>
             </main>
         </React.Fragment>

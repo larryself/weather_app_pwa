@@ -19,6 +19,7 @@
 }
 
 .hint__search-text--white {
+    cursor: pointer;
     color: #FFFFFF;
     border-bottom: 1px dashed #FFFFFF;
 }
