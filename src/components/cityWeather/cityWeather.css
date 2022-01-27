@@ -3,18 +3,18 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 28px;
+    padding-top: 18px;
 }
 
 @media (max-width: 768px) {
     .city-weather {
-        padding-top: 36px;
+        padding-top: 26px;
     }
 }
 
 @media (max-width: 480px) {
     .city-weather {
-        padding-top: 45px;
+        padding-top: 35px;
     }
 }
 
@@ -44,7 +44,6 @@
 @media (max-width: 480px) {
     .city-weather__description {
         font-size: 14px;
-
     }
 }
 

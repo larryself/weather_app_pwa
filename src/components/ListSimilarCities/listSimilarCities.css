@@ -20,8 +20,17 @@
     padding: 20px;
     background: #30354B;
     display: block;
+    transition: .5s;
+}
+
+.similar-cities__item-link:hover, .similar-cities__item-link:focus {
+    opacity: 0.5;
 }
 
 .similar-cities__item-highlight {
     color: #FFF;
+}
+
+.simplebar-track {
+    margin-top: 3px;
 }
