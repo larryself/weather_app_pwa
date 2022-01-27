@@ -8,17 +8,18 @@ import 'simplebar/dist/simplebar.min.css';
 const ListSimilarCities = ({value, className}) => {
     const filteredCities = cityList.filter((city) => city.name.slice(0, value.length).toLowerCase() === value.toLowerCase())
     return (
-        <div className={`similar-cities ${className? className: ''}`}>
-            <SimpleBar style={{maxHeight: 300}}>
+        <div className={`similar-cities ${className ? className : ''}`}>
+            <SimpleBar style={{maxHeight: 300}}  autoHide={false}>
                 <ul className={"similar-cities__list"}>
-                    {value.length >= 3 ? filteredCities.map(city => {
-                            return (<li className={"similar-cities__item"} key={city.name}><Link
-                                className={"similar-cities__item-link"}
-                                to={`/city?name=${city.name}`}><span
-                                className={'similar-cities__item-highlight'}>{value}</span><span>{city.name.slice(value.length)}</span></Link>
-                            </li>)
-                        })
-                        : null}
+                    {filteredCities.map(city => {
+                        return (<li className={"similar-cities__item"} key={city.name}><Link
+                            className={"similar-cities__item-link"}
+                            tabIndex={0}
+                            to={`/city?name=${city.name}`}><span
+                            className={'similar-cities__item-highlight'}>{value}</span><span>{city.name.slice(value.length)}</span></Link>
+                        </li>)
+                    })
+                    }
                 </ul>
             </SimpleBar>
         </div>
