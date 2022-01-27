@@ -1,5 +1,5 @@
-const CACHE_NAME = "version-1";
-const urlsToCache = [ 'index.html', 'offline.html' ];
+const CACHE_NAME = "weather-check-1";
+const assets = [ 'index.html', 'offline.html','logo192.png','logo512.png','favicon.ico' ];
 
 const self = this;
 
@@ -10,7 +10,7 @@ self.addEventListener('install', (event) => {
             .then((cache) => {
                 console.log('Opened cache');
 
-                return cache.addAll(urlsToCache);
+                return cache.addAll(assets);
             })
     )
 });
@@ -30,7 +30,6 @@ self.addEventListener('fetch', (event) => {
 self.addEventListener('activate', (event) => {
     const cacheWhitelist = [];
     cacheWhitelist.push(CACHE_NAME);
-
     event.waitUntil(
         caches.keys().then((cacheNames) => Promise.all(
             cacheNames.map((cacheName) => {
