@@ -9,7 +9,6 @@
     padding: 0;
 }
 
-
 input,
 button,
 label {
@@ -28,6 +27,7 @@ ul {
 }
 
 a {
+    outline: 0;
     text-decoration: none;
     color: inherit;
 }
