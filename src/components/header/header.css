@@ -11,7 +11,7 @@
     }
 }
 
-.page-header__wrapper {
+.page-header__link {
     display: flex;
     align-items: center;
     gap: 12px;
