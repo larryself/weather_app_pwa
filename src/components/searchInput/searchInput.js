@@ -1,7 +1,7 @@
 import React from 'react';
 import './searchInput.css'
 
-const SearchInput = ({placeholder, value, onChange, className}) => {
+const SearchInput = ({placeholder, value, onChange, className,onFocus}) => {
     return (
         <input
             className={`search-input ${className ? className : ''}`}
@@ -9,6 +9,7 @@ const SearchInput = ({placeholder, value, onChange, className}) => {
             placeholder={placeholder}
             value={value}
             onChange={onChange}
+            onFocus={onFocus}
         />
     );
 };

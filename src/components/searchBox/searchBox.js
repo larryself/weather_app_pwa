@@ -22,9 +22,7 @@ const SearchBox = ({inputValue, setInputValue}) => {
                     value={inputValue}
                     placeholder={'Укажите город'}
                     className={'search-box__input'}
-                    onFocus={() => {
-                        return setIsOpen(true)
-                    }}
+                    onFocus={() =>setIsOpen(true)}
                 />
                 {inputValue.length >= 3 & isOpen ?
                     <ListSimilarCities
