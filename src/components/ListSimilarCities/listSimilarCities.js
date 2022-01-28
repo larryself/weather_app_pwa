@@ -5,12 +5,12 @@ import cityList from "../../lib/russiaCities.json"
 import './listSimilarCities.css';
 import 'simplebar/dist/simplebar.min.css';
 
-const ListSimilarCities = ({value, className}) => {
+const ListSimilarCities = ({value, className, isOpen}) => {
     const filteredCities = cityList.filter((city) => city.name.slice(0, value.length).toLowerCase() === value.toLowerCase())
     return (
         <div className={`similar-cities ${className ? className : ''}`}>
-            <SimpleBar style={{maxHeight: 300}}  autoHide={false}>
-                <ul className={"similar-cities__list"}>
+            <ul className={"similar-cities__list"}>
+                <SimpleBar style={{maxHeight: 300}} autoHide={false}>
                     {filteredCities.map(city => {
                         return (<li className={"similar-cities__item"} key={city.name}><Link
                             className={"similar-cities__item-link"}
@@ -20,8 +20,8 @@ const ListSimilarCities = ({value, className}) => {
                         </li>)
                     })
                     }
-                </ul>
-            </SimpleBar>
+                </SimpleBar>
+            </ul>
         </div>
     );
 };

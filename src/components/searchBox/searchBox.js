@@ -1,19 +1,26 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import SearchInput from '../searchInput/searchInput';
 import ListSimilarCities from '../ListSimilarCities/listSimilarCities';
+import InformationHint from "../informationHint/informationHint";
 import './searchBox.css'
 
-const SearchBox = ({inputValue, setInputValue}) => {
-    const [isOpen, setIsOpen] = useState(true)
+const SearchBox = ({cities}) => {
+    const [inputValue, setInputValue] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
+    const inputRef = useRef(null)
     useEffect(() => {
         const onClick = e => {
             if (!e.target.closest('.search-box__wrapper')) {
-                setIsOpen(false)
+                setIsOpen(false);
+                inputRef.current.blur();
             }
         }
-        document.addEventListener('click', onClick);
+        if (isOpen) {
+            document.addEventListener('click', onClick);
+        }
         return () => document.removeEventListener('click', onClick);
-    }, []);
+    }, [isOpen]);
+
     return (
         <div className={'search-box'}>
             <div className={'search-box__wrapper'}>
@@ -22,15 +29,16 @@ const SearchBox = ({inputValue, setInputValue}) => {
                     value={inputValue}
                     placeholder={'Укажите город'}
                     className={'search-box__input'}
-                    onFocus={() =>setIsOpen(true)}
+                    onFocus={() => setIsOpen(true)}
+                    ref={inputRef}
                 />
-                {inputValue.length >= 3 & isOpen ?
-                    <ListSimilarCities
-                        value={inputValue}
-                        className={'search-box__autocomplete-list'}
-                    />
-                    : null}
+                {inputValue.length >= 3 && isOpen ? <ListSimilarCities
+                    value={inputValue}
+                    isOpen={isOpen}
+                    className={'search-box__autocomplete-list'}
+                /> : null}
             </div>
+            {!cities.length && <InformationHint setInputValue={setInputValue} inputRef={inputRef}/>}
         </div>
     );
 };

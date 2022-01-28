@@ -6,16 +6,15 @@ import SearchBox from "../../components/searchBox/searchBox";
 import CityCards from "../../components/cityCards/cityCards";
 import {getWeather} from "../../api/getWeather";
 import {LOCAL_STORAGE_KEY} from "../../constants/constants";
-import InformationHint from "../../components/informationHint/informationHint";
 import Loader from "../../components/loader/loader";
 
 const Index = () => {
-    const [inputValue, setInputValue] = useState('');
-    const [cities, SetCities] = useState([]);
+    const [cities, setCities] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
     const searchWeather = async (citiesInBookmark) => {
-        const response = await axios.all(citiesInBookmark.map((city) => getWeather(city)));
-        SetCities(response)
+            const response = await axios.all(citiesInBookmark.map((city) => getWeather(city)));
+            setCities(response)
+            setIsLoading(false)
     }
     useEffect(() => {
         const citiesInBookmark = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -29,10 +28,9 @@ const Index = () => {
             <Header/>
             <main className={'page-main'}>
                 <Wrapper>
-                    <SearchBox inputValue={inputValue} setInputValue={setInputValue}/>
-                    {cities.length ?
-                        <CityCards cities={cities}/> : isLoading ?
-                            <Loader/> : <InformationHint setInputValue={setInputValue}/>}
+                    <SearchBox cities={cities}/>
+                    {isLoading && <Loader/>}
+                    {cities.length ? <CityCards cities={cities}/> :  null }
                 </Wrapper>
             </main>
         </React.Fragment>
