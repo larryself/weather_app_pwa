@@ -27,6 +27,16 @@
 .search-box__input {
     position: relative;
     z-index: 9;
+    background: #2A2F45;
+    border: 0;
+    border-radius: 2px;
+    color: #FFFFFF;
+    padding: 18px 20px;
+    width: 100%;
+}
+
+.search-box__input::placeholder {
+    color: #8A91AB;
 }
 
 .search-box__autocomplete-list {
