@@ -1,50 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useSearchParams, useNavigate } from 'react-router-dom';
-import { getWeather } from '../../api/getWeather';
+import React from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import useCityWeather from '../../hooks/useCityWeather';
 import { DESKTOP } from '../../constants/breakpoints';
-import { LOCAL_STORAGE_KEY } from '../../constants/constants';
 import Loader from '../../components/loader/loader';
 import Icon from '../../components/icon/icon';
 import CityWeather from '../../components/cityWeather/cityWeather';
 import Header from '../../components/header/header';
+import BookmarkCity from '../../components/bookmarkCity/bookmarkCity';
 import './city.css';
 
 const City = () => {
-  const [weather, setWeather] = useState({});
-  const [bookmark, setBookmark] = useState(false);
   const [searchParams] = useSearchParams();
-  const isDesktop = useMediaQuery(`(min-width: ${DESKTOP})`);
   const cityName = searchParams.get('name');
-  const navigator = useNavigate();
-  const handleBookmark = () => {
-    const currentCitiesInBookmarks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
-    if (!bookmark) {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([...currentCitiesInBookmarks, cityName.toLowerCase()]));
-      setBookmark(true);
-    } else {
-      const filteredCities = currentCitiesInBookmarks.filter((city) => city !== cityName.toLowerCase());
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(filteredCities));
-      setBookmark(false);
-    }
-  };
-  const searchWeather = async () => {
-    try {
-      const data = await getWeather(cityName);
-      setWeather(data);
-    } catch (e) {
-      navigator('/404');
-    }
-  };
-  useEffect(() => {
-    const citiesInBookmarks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
-    if (citiesInBookmarks.indexOf(cityName.toLowerCase()) > -1) {
-      setBookmark(true);
-    }
-  }, [cityName]);
-  useEffect(() => {
-    searchWeather();
-  }, [cityName]);
+  const [weather, isLoading] = useCityWeather(cityName);
+  const isDesktop = useMediaQuery(`(min-width: ${DESKTOP})`);
   return (
     <>
       {isDesktop && <Header />}
@@ -55,13 +25,10 @@ const City = () => {
               <Icon width={24} height={24} className='city__link-icon' name='back' />
               {isDesktop && 'Назад'}
             </Link>
-            <button type='button' className='city__bookmark' onClick={handleBookmark}>
-              <Icon width={24} height={24} className='city__bookmark-icon'
-                    name={bookmark ? 'bookmark_use' : 'bookmark'} />
-            </button>
+            <BookmarkCity cityName={cityName} />
           </div>
-          {!weather.main && <Loader />}
-          {weather.main && <CityWeather weather={weather} />}
+          {!isLoading && <Loader />}
+          {isLoading && <CityWeather weather={weather} />}
         </section>
       </main>
     </>
