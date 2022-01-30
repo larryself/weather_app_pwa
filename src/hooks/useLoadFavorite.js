@@ -6,7 +6,7 @@ const useLoadFavorite = () => {
   const citiesInBookmark = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 
   useEffect(()=>{
-    if (citiesInBookmark.length > 0) {
+    if (citiesInBookmark && citiesInBookmark.length > 0) {
       setFavorite(citiesInBookmark);
     }
   },[])
