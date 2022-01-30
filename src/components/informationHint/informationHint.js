@@ -2,17 +2,13 @@ import React from 'react';
 import './informationHint.css';
 import Icon from '../icon/icon';
 
-const InformationHint = ({ setInputValue, inputRef }) => {
-  const focusedOnInput = (event) => {
-    setInputValue(event.target.innerHTML);
-    inputRef.current.focus();
-  };
+const InformationHint = ({ onClick }) => {
   return (
     <div className='hint'>
       <div className='hint__search'>
         <Icon width={38} height={32} className='hint__search-icon' name='arrow' />
         <p className='hint__search-text'>Начните вводить город,
-          например, <span className='hint__search-text--white' onClick={focusedOnInput} aria-hidden='true'>Ижевск</span>
+          например, <span className='hint__search-text--white' onClick={onClick} aria-hidden='true'>Ижевск</span>
         </p>
       </div>
       <div className='hint__bookmark'>

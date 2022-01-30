@@ -35,18 +35,3 @@
 .city__link-icon {
     fill: currentColor;
 }
-
-.city__bookmark {
-    background-color: transparent;
-    color: #8A91AB;
-    padding: 10px;
-}
-
-
-.city__bookmark:hover, .city__bookmark:focus {
-    color: #FFFFFF;
-}
-
-.city__bookmark-icon {
-    fill: currentColor;
-}
