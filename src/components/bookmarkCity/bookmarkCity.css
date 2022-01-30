@@ -1,0 +1,13 @@
+.bookmark {
+    background-color: transparent;
+    color: #8A91AB;
+    padding: 10px;
+}
+
+.bookmark:hover, .bookmark:focus {
+    color: #FFFFFF;
+}
+
+.bookmark__icon {
+    fill: currentColor;
+}
