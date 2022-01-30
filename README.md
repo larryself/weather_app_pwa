@@ -1,4 +1,4 @@
-# Weather check task
+# Weather check [task](https://weatherapp-pwa.vercel.app/)
 ## PWA-веб-приложение: Погода.
 ### Задание:
 Необходимо создать PWA-веб-приложение: Погода. Данные передаются при помощи API. Их нужно выводить на экран без перезагрузки страницы.
@@ -17,3 +17,26 @@
 - Вся графика в SVG, в первую очередь речь об иконках;
 - Все SVG иконки нужно собрать в спрайт;
 - Иконки погоды должны соответствовать ответу о погоде в запросе.
+
+### Развернутный проект
+[Weather-app](https://weatherapp-pwa.vercel.app/)
+
+## Развернуть проект локально:
+
+### Установка
+
+Для установки клонируйте текущий репозиторий и установите зависимости
+
+### `npm install`
+
+Для запуска проекта в формате разработке
+
+### `npm run start`
+
+Открыть [http://localhost:3000](http://localhost:3000) чтобы посмотреть его в браузере
+
+## Развевернуть проект на Vercel
+
+Разверните проект с помощью [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/larryself/weather_app_pwa&project-name=weather-app-pwa&repository-name=weather-app-pwa)
